@@ -68,6 +68,7 @@ x-wonton:
     en: "Web cloud drive: upload, download and share files, with media previews"
   icon: icon.png
   notices: [NOTICE]
+  screenshots: [screenshots/files.png, screenshots/photos.png]
   author: { name: geraldpeng6, url: "https://github.com/geraldpeng6" }
   homepage: https://github.com/9001/copyparty
   # 上游 Copyparty 的许可证；插件包自己的许可证在仓库 LICENSE 里。
