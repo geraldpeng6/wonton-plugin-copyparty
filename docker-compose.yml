@@ -62,10 +62,10 @@ x-wonton:
   id: me.ocv.copyparty
   version: 0.1.0
   kind: app
-  title: { en: Copyparty }
+  title: { zh: 家庭网盘（Copyparty）, en: Home Cloud Drive (Copyparty) }
   description:
-    zh: 网页网盘：上传、下载、分享文件，图片视频音乐直接预览
-    en: "Web cloud drive: upload, download and share files, with media previews"
+    zh: 像百度网盘，但文件存在家里的服务器上：手机、电脑打开网页就能上传下载，照片、视频、音乐直接在线看。最简单好上手，还能开链接让别人下载或往里传文件。
+    en: "Like Google Drive, but the files live on your home server: upload and download from any phone or computer browser, with photos, videos and music playing right there. The easiest drive to start with, and you can share links for others to download from or upload to."
   icon: icon.png
   notices: [NOTICE]
   screenshots: [screenshots/files.png, screenshots/photos.png]
