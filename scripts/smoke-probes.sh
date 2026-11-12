@@ -25,6 +25,8 @@ data_write() {
   token="probe-$(tr -dc a-z0-9 </dev/urandom | head -c 12)-$(date +%s)"
   tmp="$(mktemp)"
   printf 'copyparty data probe %s\n' "$token" >"$tmp"
+  # 升级、重装会重建网关，旧会话失效：先重建（beszel 同款做法）。
+  dweb --fresh / -L >/dev/null || { rm -f "$tmp"; echo "重建网关会话失败"; return 1; }
   if ! web_get "/$fn" -H 'replace: t' -T "$tmp" >/dev/null; then
     rm -f "$tmp"
     echo "PUT /$fn 失败"
@@ -40,6 +42,7 @@ data_check() {
   [[ -n "$line" ]] || { echo "标记没写进 $SMOKE_STATE"; return 1; }
   fn="$(awk '{print $2}' <<<"$line")"
   token="$(awk '{print $3}' <<<"$line")"
+  dweb --fresh / -L >/dev/null || { echo "重建网关会话失败"; return 1; }
   if ! got="$(web_get "/$fn")"; then
     echo "读不回 /$fn：升级/重装把文件弄丢了？"
     return 1
